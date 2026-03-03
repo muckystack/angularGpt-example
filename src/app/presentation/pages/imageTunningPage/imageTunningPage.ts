@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app--pros-const-page',
+  selector: 'app-image-tunning-page',
   imports: [],
-  templateUrl: './ prosConstPage.html',
+  templateUrl: './imageTunningPage.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProsConstPage { }
+export default class ImageTunningPage { }
