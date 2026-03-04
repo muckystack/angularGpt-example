@@ -7,3 +7,4 @@ export * from './typingLoader/typingLoader';
 
 export * from './text-boxes/textMessageBox/textMessageBox';
 export * from './text-boxes/textMessageBoxFile/textMessageBoxFile';
+export * from './text-boxes/textMessageBoxSelect/textMessageBoxSelect';

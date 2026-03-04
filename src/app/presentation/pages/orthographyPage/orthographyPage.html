@@ -4,20 +4,38 @@
       <app-chat-message
         text="Escribe el texto que quieres que revise."
       ></app-chat-message>
+
+      @for (message of messages(); track $index) {
+        @if (message.isGpt) {
+          <app-chat-message [text]="message.text"></app-chat-message>
+        } @else {
+          <!-- Messagebox -->
+          <app-my-messages [text]="message.text"></app-my-messages>
+        }
+      }
+
+      @if (isLoading()) {
+        <app-typing-loader></app-typing-loader>
+      }
     </div>
   </div>
 
-  <!-- Messagebox -->
-  <app-my-messages text="Hola mundo"></app-my-messages>
-
-  <app-typing-loader></app-typing-loader>
   <!-- <app-text-message-box
     placeholder="Escribe aqui lo que deceas"
     (onMessage)="handleMessage($event)"
   ></app-text-message-box> -->
-  
-  <app-text-message-box-file
+
+  <!-- <app-text-message-box-file
     placeholder="Escribe aqui lo que deceas"
     (onMessage)="handleMessageWhitFile($event)"
-  ></app-text-message-box-file>
+  ></app-text-message-box-file> -->
+
+  <app-text-message-box-select
+    placeholder="Escribe aqui lo que deceas"
+    [options]="[
+      { id: '1', text: '1' },
+      { id: '2', text: '2' },
+    ]"
+    (onMessage)="handleMessageWhitSelect($event)"
+  ></app-text-message-box-select>
 </div>
