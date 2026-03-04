@@ -8,6 +8,16 @@
   </div>
 
   <!-- Messagebox -->
-   <app-my-messages
-   text="asdf"></app-my-messages>
+  <app-my-messages text="Hola mundo"></app-my-messages>
+
+  <app-typing-loader></app-typing-loader>
+  <!-- <app-text-message-box
+    placeholder="Escribe aqui lo que deceas"
+    (onMessage)="handleMessage($event)"
+  ></app-text-message-box> -->
+  
+  <app-text-message-box-file
+    placeholder="Escribe aqui lo que deceas"
+    (onMessage)="handleMessageWhitFile($event)"
+  ></app-text-message-box-file>
 </div>
